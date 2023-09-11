@@ -1,4 +1,4 @@
-import "./index.css";
+// import "./index.css";
 import {
   initGlobalState,
   registerMicroApps,
@@ -24,10 +24,14 @@ root.render(
 );
 
 /**
- * Step1 init app（optional）
+ * Step 1 init app（optional）
  */
 
 render({ loading: false });
+
+/**
+ * Step 2 register micro-app
+ */
 
 registerMicroApps([
   {
@@ -44,28 +48,26 @@ registerMicroApps([
   },
 ]);
 
-const { onGlobalStateChange, setGlobalState } = initGlobalState({
-  user: "qiankun",
-});
+const { onGlobalStateChange, setGlobalState } = initGlobalState({});
 
 onGlobalStateChange((value, prev) =>
   console.log("[onGlobalStateChange - master]:", value, prev)
 );
 
-setGlobalState({
-  ignore: "master",
-  user: {
-    name: "master",
-  },
-});
+// setGlobalState({
+//   ignore: "master",
+//   user: {
+//     name: "master",
+//   },
+// });
 
 /**
- * Step3 set default mount app
+ * Step 3 set default mount app
  */
 setDefaultMountApp("/react16");
 
 /**
- * Step4 start app
+ * Step 4 start app
  */
 start();
 

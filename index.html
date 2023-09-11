@@ -7,21 +7,12 @@
     <title>William MFE</title>
   </head>
   <body>
+    <div id="root"></div>
     <div class="mainapp">
-      <div id="root"></div>
       <div id="mainapp-main">
-        <ul class="mainapp-sidemenu">
-          <li onclick="push('/react16')">React16</li>
-          <li onclick="push('/vue3')">Vue3</li>
-        </ul>
         <main id="subapp-container"></main>
       </div>
     </div>
     <script type="module" src="/src/main.tsx"></script>
-    <script>
-      function push(subapp) {
-        history.pushState(null, subapp, subapp);
-      }
-    </script>
   </body>
 </html>
